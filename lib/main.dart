@@ -111,7 +111,7 @@ class _ProposalHomePageState extends State<ProposalHomePage>
 
   void checkAnswer(int index) {
     String answer = controllers[index].text.toLowerCase().trim();
-    if (puzzles[index].answers.any((a) => answer.contains(a))) {
+    if (puzzles[index].answers.any((a) => answer.toLowerCase().contains(a.toLowerCase()))) {
       setState(() {
         if (!solvedStatus[index]) {
           solvedStatus[index] = true;
